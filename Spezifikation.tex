@@ -1,0 +1,55 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Humanoider Roboter - Spezifikation}
+\author{Jenning Sch\"afer}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Allgemeine Beschreibung}
+In diesem Projekt soll ein humanoider Roboter gebaut und Software erstellt werden, welche sich beide von anderen Projekten durch einen hohen Grad an Modularit\"at, Flexibilit\"at und Skalierbarkeit zu unterscheiden. Dabei sollen alle Baupläne ver\"offentlicht und frei zug\"anglich sein und die Software nach GPL lizensiert werden, ob GPLv2, GPLv2 or later oder GPLv3 soll noch diskutiert werden um m\"glichst offen und zug\"anglich zu sein. 
+
+Anlass ist die Idee, dass ein derart komplexes Projekt, wie die Erstellung eines Humanoiden Roboter mit brauchbarer Intelligenz nicht von 20 Wissenschaftlern in einem Labor und schon gar nicht, wenn jedes Projekt von vorne anf\"fangt realisiert werden kann. Stattdessen ben\"otigt es ein Projekt, das weltweit Standard wird, so dass dies immer als Referenz oder als Grundlage genommen werden kann, was dank Copyleft das Projekt wieder voran treibt.
+
+\section{Funktionsweise}
+\begin{description}
+   \item[Das alleinstellungsmerkmal sind folgende Funktionen]~\par
+   \begin{enumerate}
+      \item Software
+      \begin{enumerate}
+         \item Aufbau als verteiltes System
+         \item Hoher Grad an Skalierbarkeit
+         \item Der Roboter soll Autonom sein, sich mit anderen Roboter in einem Peer-to-Peer Netzwerk befinden k\"onnen, das Netzwerk dazu benutzen k\"onnen um Rechenleistung  zu teilen wie ein Cluster Computer und einen Server als Angelpunkt verwenden k\"innen auf dem ebenfalls Rechenarbeit abgegeben werden kann. Die Serversoftware soll wiederum auch als Clustercomputer benutzt werden k\"onnen.
+         \item Jede Zeile Code die ver\"ofentlicht wird soll sauber geschrieben und gut dokumentiert sein. Denn ein Hack zieht viele nach sich und macht den Code auf Dauer unbenutzbar
+      \end{enumerate}
+      \item Hardware
+         \begin{enumerate}
+         \item Einzelne Bauteile wie Arm Kopf und Beine sollen mit und ohne dem Rest Funktionieren k\"onnen
+         \item Teile sollen Austauschbar sein
+      	\end{enumerate}
+      \item Meilensteine aus technischer Sicht
+      	\begin{enumerate}
+	\item Kick-Off Meeting mit allen beteiligten
+	\item Verfeinerte Spezifikation
+	\item Vertraut machen mit der Technologie
+	\item Roboter entwerfen
+	\item Roboter bauen und ihn zum laufen bringen
+	\item Roboter über den Computer Steuern (mit der Tastatur in verschiedene Richtungen bewegen)
+	\item An die Community \"ubergeben
+      	\end{enumerate}
+   \end{enumerate}
+\end{description}
+%\subsection{}
+
+
+
+\end{document}  
