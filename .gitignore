@@ -1,7 +1,7 @@
 # ignoring latex temp files and ohther crap
-*.pdf
-*.tex.bak
-*.toc
-*.synctex.gz
-*.log
-*.aux
+.pdf
+.tex.bak
+.toc
+.synctex.gz
+.log
+.aux
