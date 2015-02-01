@@ -57,7 +57,6 @@ Anlass ist die Idee, dass ein derart komplexes Projekt, wie die Erstellung eines
 \end{description}
 
 \subsection{Software}
-
 \subsubsection{Aufbau als verteiltes System}
 Das Roboter-System soll nicht nur bez\"uglich Server und der Verbindung zu anderen Ger\"aten als verteiltes System aufgebaut sein, sondern auch in Bezug auch sich selbst. Damit sollte es kein Problem darstellen teile auszutauschen, einzeln zu benutzen und eine Infrastruktur f\"ur noch unbekannte zuk\"unftige Anwendungsm\"oglichkeiten bereit zu stellen.
 \subsubsection{Hoher Grad an Skalierbarkeit}
@@ -71,12 +70,16 @@ Trotzdem der m\"oglichkeit einen Server in das System einzubauen um von dort den
 *Randnotiz an Armin und Bastl:
 Frage: Ein Server kann ja auch benutzt werden um einen Roboter zu steuern, was nun wenn jemand auf die Idee kommt und sagt, P2P, geil, schlie\ss{} ich  mehrere Server an? Und was wenn er ein Scherzkeks ist und einen Roboter mit zwei Servern gleichzeitig zwei verschiedene Dinge tun lassen will? Oder, und ich glaub schon, dass es Menschen gibt die so was ausprobieren, einfach weil ses k\"onnen, wenn zwei Roboter Netzwerk sich \"uber das Internet verbinden um Erfahrungen auszutauschen, vielleicht auch hier nur bestimmte Daten.  Ich mein so n Spa\ss{} wie die zus\"atzliche Steuerung von Mobilen Ger\"alten interessiert mich in der Frage wenig, weil des seh ich mehr als Remote einem bestimmten Server an. Jetzt die eigentliche Frage, w\"are es sinnvoll verschiedenen Modulen eine Gruppe zuzuweisen, f\"ur die es sozusagen einen Master\&Commander Server gibt, der im Zweifelsfall immer die Befehlsgewalt hat? Und w\"are es dann auch m\"oglich Server in Gruppen zu unterteilen \"uber die ein anderer Server die Befehlsgewalt hat? Wei\ss{} nicht wer des warum braucht, aber rein Hypothetisch. Wobei ich eine 
 \subsubsection{Rechenleistung teilen}
-
+Obwohl schon ausgef\"uhrt wurde, dass es bei manchen Funktionen sinnvoller ist wie bei anderen, so soll es gerade bei rechenintensiven Anforderungen m\"oglich sein Rechenleistung auszulagern und zwischen Modulen zu teilen. Soll der Roboter Beispielsweise eine Treppe besteigen und scannt vorher Treppen und Abstand und berechnet die Fu\ss{}bewegung im Stand vor der Ausf\"uhrung, so kann es sinnvoll sein dies zu einem gro\ss{}teil auf dem Leistungsf\"ahigerem Server auszulagern. Au\ss{}erdem kann so ein Leistungssch\"acherer Prozessor in Module verbaut werden um Strom, oder eben eventuell Akku zu sparen. Trotzdem soll es m\"oglich sein zwischen allen Modulen Rechenleistung zu teilen, wodurch mehrere Roboter beispielsweise ebenfalls wie ein Clustercomputer agieren, wenn beispiielsweise ein Roboter gerade am Laden ist und womit nicht rechnen muss, so kann dieser einem anderen Roboter aushelfen, der Ressourcen ben\"otigt. 
 \subsubsection{Server}
+Der Server soll Ansprechpartner f\"ur jedes Modul sein, Wissen und Informationen sammeln und f\"ur alle Module verf\"ugbar machen, updates verteilen und in der Lage sein Module zu \"uberwachen und zu steuern. Ob und wie weit eine Anbindung an das Internet oder generell Anschluss an externe Daten (Kalender, Uhrzeit, etc. ) stattfindet wird noch diskutiert, M\"oglichkeiten, die sich dadurch er\"offnen w\"aren zwar grenzenlos, Ger\"ate mit derart vielen M\"oglichkeiten an das Internet anzubinden ist aus Sicherheitsaspekten jedoch zumindest diskusionsw\"urdig. Eventuell wird es es eine nachinstallierbare Internetextension geben, so dass eine solche Nutzung optional ist. 
 \subsubsection{Clean Code}
+Prinzipiell werden trotzdem anf\"anglichem Mehraufwand nur Releases mit sauberem Code, sinnvollen Kommentaren und guter Dokumentation herausgegeben. Ein Code der von externen Personen nicht lesbar oder verst\"andlich ist, kann nicht verbessert werden. Dar\"uber hinaus, einmal ein Hack, kann oft nur mit noch einem Hack benutz werden, und dieser mit noch einem Hack, und schlussendlich hat man ab einem gewissen Grad an Komplexit\"at ein unbrauchbares System, daher unser Motto, keine Kompromisse (Au\ss{}er zu pers\"ohnlichen testzweckend nat\"urlich in Branches)
 \subsubsection{Sicherheit}
-\subsection{Hardware}
+F\"ur Netzwerke und zu Speicherung der Daten werden nur State-of-the-Art Open Source Verschl\"usslungen und Sicherheitsverfahren verwendet.
 
+\subsection{Hardware}
 \subsubsection{Modularit\"at}
+\subsubsection{G\"unstige Hardware}
 
 \end{document}  
