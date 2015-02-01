@@ -29,30 +29,54 @@ Anlass ist die Idee, dass ein derart komplexes Projekt, wie die Erstellung eines
       \begin{enumerate}
          \item Aufbau als verteiltes System
          \item Hoher Grad an Skalierbarkeit
-         \item Der Roboter soll Autonom sein, sich mit anderen Roboter in einem Peer-to-Peer Netzwerk befinden k\"onnen, das Netzwerk dazu benutzen k\"onnen um Rechenleistung  zu teilen wie ein Cluster Computer und einen Server als Angelpunkt verwenden k\"innen auf dem ebenfalls Rechenarbeit abgegeben werden kann. Die Serversoftware soll wiederum auch als Clustercomputer benutzt werden k\"onnen.
+         \item Der Roboter soll Autonom sein
+         \item Der Roboter soll sich mit anderen Roboter in einem Peer-to-Peer Netzwerk befinden k\"onnen um wissen zu teilen
+         \item das Netzwerk dazu benutzen k\"onnen um Rechenleistung  zu teilen wie ein Cluster Computer
+         \item Einen Server als Angelpunkt verwenden k\"innen auf dem ebenfalls Rechenarbeit abgegeben werden kann. 
+         \item Die Serversoftware soll wiederum auch als Clustercomputer benutzt werden k\"onnen.
          \item Jede Zeile Code die ver\"ofentlicht wird soll sauber geschrieben und gut dokumentiert sein. Denn ein Hack zieht viele nach sich und macht den Code auf Dauer unbenutzbar
+         \item Gr\"o\ss{}tm\"ogliche Sicherheit
+         \item einfach zu updaten
       \end{enumerate}
       \item Hardware
          \begin{enumerate}
-         \item Einzelne Bauteile wie Arm Kopf und Beine sollen mit und ohne dem Rest Funktionieren k\"onnen
-         \item Teile sollen Austauschbar sein
+         		\item Einzelne Bauteile wie Arm Kopf und Beine sollen mit und ohne dem Rest Funktionieren k\"onnen
+         		\item Teile sollen Austauschbar sein
       	\end{enumerate}
       \item Meilensteine aus technischer Sicht
       	\begin{enumerate}
-	\item Kick-Off Meeting mit allen beteiligten
-	\item Verfeinerte Spezifikation
-	\item Vertraut machen mit der Technologie
-	\item Roboter entwerfen
-	\item Roboter bauen und ihn zum laufen bringen
-	\item Roboter \"uber den Computer Steuern (mit der Tastatur in verschiedene Richtungen bewegen)
-	\item An die Community \"ubergeben
+		\item Kick-Off Meeting mit allen beteiligten
+		\item Verfeinerte Spezifikation
+		\item Vertraut machen mit der Technologie
+		\item Roboter entwerfen
+		\item Roboter bauen und ihn zum laufen bringen
+		\item Roboter \"uber den Computer Steuern (mit der Tastatur in verschiedene Richtungen bewegen)
+		\item An die Community \"ubergeben
       	\end{enumerate}
    \end{enumerate}
 \end{description}
+
 \subsection{Software}
+
+\subsubsection{Aufbau als verteiltes System}
+Das Roboter-System soll nicht nur bez\"uglich Server und der Verbindung zu anderen Ger\"aten als verteiltes System aufgebaut sein, sondern auch in Bezug auch sich selbst. Damit sollte es kein Problem darstellen teile auszutauschen, einzeln zu benutzen und eine Infrastruktur f\"ur noch unbekannte zuk\"unftige Anwendungsm\"oglichkeiten bereit zu stellen.
+\subsubsection{Hoher Grad an Skalierbarkeit}
+Das Roboter-System sollte eine Infrastruktur bereitstellen, die es dem Anwender erlaubt das System mit so viel Ger\"aten wie m\"oglich zu verbinden. Ob nun ein Roboter mit einem Server, anderen Modulen, Module untereinander, Roboter miteinander, eine Hausautomation oder das Roboter-System mit Hauautomation. Prinzipiell sollte die Architektur von Anfang an so aufgebaut sein, dass diesbez\"uglich so wenig Barrieren wie m\"oglich und entsprechende Schnittstellen geschaffen werden oder hinzugef\"ugt werden k\"onnen. Anders formuliert, f\"ur das System sollte es egal sein wie viele oder welche Ger\"ate miteinander kommunizieren. Bez\"uglich der Regelung und Steuerung dieser Ger\"ate wird noch diskutiert.
+\subsubsection{Autonimit\"at}
+Obwohl das Roboter-System prinzipiell als verteiltes System entworfen wird, so sollte ein Einzelner Roboter trotzdem so konzipiert werden, dass er im Bedarfsfall Autonom aufgebaut wird und bestimmte Handlungen autonom, hei\ss{}t unabh\"angig vom Netzwerk ausf\"uhrt. Soll der Roboter beispielsweise komplett autonom sein, so sollte es m\"oglich sein ihn mit h\"oherer Rechenleistung auszustatten. Prinzipiell Handlungen die autonom ausgef\"uhrt werden sollten, sollten Handlungen wie das verhindern von fallen bei Gleichgewichtsverlust sein, um die Reaktionszeit zu verk\"urzen. 
+\subsubsection{Peer-to-Peer}
+Trotzdem der m\"oglichkeit einen Server in das System einzubauen um von dort den Roboter zu steuern, dort Informationen zu speichern um diese im Netzwerk verf\"ugbar zu machen, sollte die Architektur nicht auf Client-Server sondern auf eine Peer-to-Peer Architektur setzen. So k\"onnen Module (alle Ger\"ate, Roboter, etc. im System werden als Module betrachtet) direkt ohne Umweg \"uber den Server miteinander kommunizieren und, falls es nur einen WLAN Hotspot gibt, auch als AccesPoint f\"ur das Netzwerk benutzt werden, da dieses Modul auch ins Netzwerk integriert ist.
+\\
+\\
+*Randnotiz an Armin und Bastl:
+Frage: Ein Server kann ja auch benutzt werden um einen Roboter zu steuern, was nun wenn jemand auf die Idee kommt und sagt, P2P, geil, schlie\ss{} ich  mehrere Server an? Und was wenn er ein Scherzkeks ist und einen Roboter mit zwei Servern gleichzeitig zwei verschiedene Dinge tun lassen will? Oder, und ich glaub schon, dass es Menschen gibt die so was ausprobieren, einfach weil ses k\"onnen, wenn zwei Roboter Netzwerk sich \"uber das Internet verbinden um Erfahrungen auszutauschen, vielleicht auch hier nur bestimmte Daten.  Ich mein so n Spa\ss{} wie die zus\"atzliche Steuerung von Mobilen Ger\"alten interessiert mich in der Frage wenig, weil des seh ich mehr als Remote einem bestimmten Server an. Jetzt die eigentliche Frage, w\"are es sinnvoll verschiedenen Modulen eine Gruppe zuzuweisen, f\"ur die es sozusagen einen Master\&Commander Server gibt, der im Zweifelsfall immer die Befehlsgewalt hat? Und w\"are es dann auch m\"oglich Server in Gruppen zu unterteilen \"uber die ein anderer Server die Befehlsgewalt hat? Wei\ss{} nicht wer des warum braucht, aber rein Hypothetisch. Wobei ich eine 
+\subsubsection{Rechenleistung teilen}
+
+\subsubsection{Server}
+\subsubsection{Clean Code}
+\subsubsection{Sicherheit}
 \subsection{Hardware}
-\subsection{Meilensteine aus technischer Sicht}
 
-
+\subsubsection{Modularit\"at}
 
 \end{document}  
